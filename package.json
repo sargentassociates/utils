@@ -1,0 +1,16 @@
+{
+  "name": "sa-project-utils",
+  "version": "1.0.0",
+  "description": "s&a helper fns to share",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "Jay Sargent",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.6.3"
+  }
+}
