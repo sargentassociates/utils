@@ -1,1 +1,1 @@
-export * as yku from './yku';
+export * from './yku';
