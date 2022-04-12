@@ -1,4 +1,4 @@
-export type ProductNames =
+export type YKUProductNames =
 	| 'kayakPackage'
 	| 'paddleboardPackage'
 	| 'kidsKayaks'
@@ -6,7 +6,7 @@ export type ProductNames =
 	| 'eightFootKayaks'
 	| 'inflatablePaddleboards';
 
-export interface Products {
+export interface YKUProducts {
 	kayakPackage: number;
 	paddleboardPackage: number;
 	kidsKayaks: number;
@@ -14,16 +14,16 @@ export interface Products {
 	eightFootKayaks: number;
 	inflatablePaddleboards: number;
 }
-export interface PriceTypes {
+export interface YKUPriceTypes {
 	weekday: number;
 	weekend: number;
 	max: number;
 }
-export interface Prices {
-	kayakPackage: PriceTypes;
-	paddleboardPackage: PriceTypes;
-	eightFootKayaks: PriceTypes;
-	kidsKayaks: PriceTypes;
-	tenFootPaddleboards: PriceTypes;
-	inflatablePaddleboards: PriceTypes;
+export interface YKUPrices {
+	kayakPackage: YKUPriceTypes;
+	paddleboardPackage: YKUPriceTypes;
+	eightFootKayaks: YKUPriceTypes;
+	kidsKayaks: YKUPriceTypes;
+	tenFootPaddleboards: YKUPriceTypes;
+	inflatablePaddleboards: YKUPriceTypes;
 }

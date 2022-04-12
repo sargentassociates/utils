@@ -1,6 +1,6 @@
-import { Products, ProductNames, Prices } from "./types";
+import { YKUProducts, YKUProductNames, YKUPrices } from "./types";
 
-export const initialProducts: Products = {
+export const initialProducts: YKUProducts = {
 	kayakPackage: 0,
 	paddleboardPackage: 0,
 	kidsKayaks: 0,
@@ -9,7 +9,7 @@ export const initialProducts: Products = {
 	inflatablePaddleboards: 0,
 };
 
-export const getLegibleNames = (product: ProductNames) => {
+export const YKU_getLegibleNames = (product: YKUProductNames) => {
 	switch (product) {
 		case 'eightFootKayaks':
 			return "8' Kayaks";
@@ -26,12 +26,12 @@ export const getLegibleNames = (product: ProductNames) => {
 	}
 };
 
-export const getPrices = (products: Products, isWeekend: boolean, prices: Prices) => {
+export const YKU_getPrices = (products: YKUProducts, isWeekend: boolean, prices: YKUPrices) => {
 	let total = 0;
 	for (const key in products) {
 		const price = isWeekend
-			? prices[key as ProductNames].weekday
-			: prices[key as ProductNames].weekend;
+			? prices[key as YKUProductNames].weekday
+			: prices[key as YKUProductNames].weekend;
 		total += price;
 	}
 
