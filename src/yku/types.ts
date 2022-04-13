@@ -13,11 +13,13 @@ export interface YKUProducts {
 	tenFootPaddleboards: number;
 	eightFootKayaks: number;
 	inflatablePaddleboards: number;
+	[key: string]: number;
 }
 export interface YKUPriceTypes {
 	weekday: number;
 	weekend: number;
 	max: number;
+	[key: string]: number;
 }
 export interface YKUPrices {
 	kayakPackage: YKUPriceTypes;
@@ -26,4 +28,5 @@ export interface YKUPrices {
 	kidsKayaks: YKUPriceTypes;
 	tenFootPaddleboards: YKUPriceTypes;
 	inflatablePaddleboards: YKUPriceTypes;
+	[key: string]: YKUPriceTypes;
 }

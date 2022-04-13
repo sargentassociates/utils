@@ -30,9 +30,9 @@ export const YKU_getPrices = (products: YKUProducts, isWeekend: boolean, prices:
 	let total = 0;
 	for (const key in products) {
 		const price = isWeekend
-			? prices[key as YKUProductNames].weekday
-			: prices[key as YKUProductNames].weekend;
-		total += price;
+			? prices[key as YKUProductNames].weekend
+			: prices[key as YKUProductNames].weekday;
+		total += price * products[key];
 	}
 
 	return total;
