@@ -1,6 +1,6 @@
 import { YKUProducts, YKUProductNames, YKUPrices } from "./types";
 
-export const initialProducts: YKUProducts = {
+export const YKU_initialProducts: YKUProducts = {
 	kayakPackage: 0,
 	paddleboardPackage: 0,
 	kidsKayaks: 0,
