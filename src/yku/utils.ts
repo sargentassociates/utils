@@ -7,6 +7,7 @@ export const YKU_initialProducts: YKUProducts = {
 	tenFootPaddleboards: 0,
 	eightFootKayaks: 0,
 	inflatablePaddleboards: 0,
+	trailer: 0
 };
 
 export const YKU_getLegibleNames = (product: YKUProductNames) => {
@@ -23,6 +24,8 @@ export const YKU_getLegibleNames = (product: YKUProductNames) => {
 			return 'Inflatable Paddleboards';
 		case 'tenFootPaddleboards':
 			return "10' Paddleboards";
+		default:
+			return 'Trailer'
 	}
 };
 
