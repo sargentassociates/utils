@@ -7,7 +7,8 @@
   "scripts": {
     "prepare": "npm run build",
     "build": "webpack",
-    "start": "webpack --mode=development --watch"
+    "start": "webpack --mode=development --watch",
+    "postpublish": "git push"
   },
   "author": "Jay Sargent",
   "license": "ISC",
