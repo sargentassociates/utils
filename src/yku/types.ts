@@ -33,3 +33,19 @@ export interface YKUPrices {
 	trailer: YKUPriceTypes;
 	[key: string]: YKUPriceTypes;
 }
+
+export type YKUPaymentInputFields = YKUProductNames | 'days';
+
+export interface YKUProduct {
+	name: YKUProductNames;
+	total: number;
+}
+export interface YKUDayReceipt {
+	date: string;
+	isWeekend: boolean;
+	products: YKUProduct[];
+}
+export interface YKUReceipt {
+	total: number;
+	days: YKUDayReceipt[];
+}
