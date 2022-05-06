@@ -94,7 +94,6 @@ export const YKU_getDaysOfWeek = (products: YKUProducts, prices: YKUPrices, date
 		}, 0)
 	}).reduce((prev, next) => prev + next, 0);
 
-	console.log(days, total);
 	return {
 		days,
 		total
