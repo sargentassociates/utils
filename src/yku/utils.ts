@@ -35,10 +35,8 @@ export const YKU_getLegibleNames = (product: YKUPaymentInputFields) => {
 export const YKU_getPrices = (products: YKUProducts, isWeekend: boolean, prices: YKUPrices) => {
 	const priceObject = [];
 	
-	let includedProducts: YKUProductNames[] = [];
 	for (const key in products) {
 		let total = 0;
-		const amount = products[key];
 		let name = '';
 		if (key) {
 			name = key;
@@ -73,6 +71,8 @@ export const YKU_getDaysOfWeek = (products: YKUProducts, prices: YKUPrices, date
 	const start = DateTime.fromISO(dates[0]);
 	const end = DateTime.fromISO(dates[1]);
 	const interval = Interval.fromDateTimes(start, end);
+	let discount = 0;
+
 	if (dates[0] && dates[1] && interval) {
 		const dates = Array.from(getDates(interval));
 		const mappedDates = dates.map(date => {
@@ -88,15 +88,24 @@ export const YKU_getDaysOfWeek = (products: YKUProducts, prices: YKUPrices, date
 			});
 		})	
 	}
-	const total = days.map(item => {
+	let total = days.map(item => {
 		return item.products.reduce((prev, next) => {
 			return prev + next.total;
 		}, 0)
 	}).reduce((prev, next) => prev + next, 0);
 
+	if (days.length === 2) {
+		total *= .9;
+		discount = .1;
+	} else if (days.length > 2) {
+		total *= .8;
+		discount = .2;
+	}
+
 	return {
 		days,
-		total
+		total: Number(total.toFixed(2)),
+		discount
 	};
 };
 

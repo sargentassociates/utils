@@ -1,6 +1,6 @@
 {
   "name": "sa-project-utils",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "s&a helper fns to share",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,7 +8,9 @@
     "prepare": "npm run build",
     "build": "webpack",
     "start": "webpack --mode=development --watch",
-    "postpublish": "git push"
+    "postpublish": "git push",
+    "test": "jest",
+    "test:w": "jest --watch"
   },
   "author": "Jay Sargent",
   "license": "ISC",
@@ -16,8 +18,14 @@
     "luxon": "^2.3.x"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "@types/jest": "^27.5.0",
     "@types/luxon": "^2.3.1",
+    "babel-jest": "^28.1.0",
+    "jest": "^28.1.0",
     "luxon": "^2.3.2",
+    "ts-jest": "^28.0.1",
     "ts-loader": "^9.2.8",
     "typescript": "^4.6.3",
     "webpack": "^5.72.0",
