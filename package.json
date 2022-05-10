@@ -8,7 +8,6 @@
     "prepare": "npm run build",
     "build": "webpack",
     "start": "webpack --mode=development --watch",
-    "postpublish": "git push",
     "test": "jest",
     "test:w": "jest --watch"
   },
