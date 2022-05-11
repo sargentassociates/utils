@@ -47,6 +47,7 @@ export interface YKUDayReceipt {
 }
 export interface YKUReceipt {
 	total: number;
+	diff: number; 
 	days: YKUDayReceipt[];
 	discount: number;
 }

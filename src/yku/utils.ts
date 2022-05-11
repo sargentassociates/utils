@@ -93,7 +93,7 @@ export const YKU_getDaysOfWeek = (products: YKUProducts, prices: YKUPrices, date
 			return prev + next.total;
 		}, 0)
 	}).reduce((prev, next) => prev + next, 0);
-
+	const originalTotal = total;
 	if (days.length === 2) {
 		total *= .9;
 		discount = .1;
@@ -105,7 +105,8 @@ export const YKU_getDaysOfWeek = (products: YKUProducts, prices: YKUPrices, date
 	return {
 		days,
 		total: Number(total.toFixed(2)),
-		discount
+		discount,
+		diff: originalTotal - total
 	};
 };
 
