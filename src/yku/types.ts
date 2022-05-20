@@ -51,3 +51,4 @@ export interface YKUReceipt {
 	days: YKUDayReceipt[];
 	discount: number;
 }
+  

@@ -1,2 +1,2 @@
-export * from './e-signature-io';
+export * from './e-signature-io.types';
 export * from './types';
