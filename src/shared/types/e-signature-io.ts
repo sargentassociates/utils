@@ -1,4 +1,4 @@
-import { YesNo } from "./types";
+import { YesNo } from "./generic";
 
 export type ESignatureIOMethod = 'email' | 'sms';
 

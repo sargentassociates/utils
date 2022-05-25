@@ -1,6 +1,6 @@
-import { UPWCProductNames } from "./types";
+import { YKUProducts } from "./types";
 
-export const UPWC_initialProducts: UPWCProductNames = {
+export const YKU_initialProducts: YKUProducts = {
 	kayakPackage: 0,
 	paddleboardPackage: 0,
 	kidsKayaks: 0,

@@ -4,8 +4,9 @@
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": "https://github.com/sargentassociates/utils.git",
   "scripts": {
-    "prepare": "npm run build",
+    "deploy": "npm run build && np",
     "build": "webpack",
     "start": "webpack --mode=development --watch",
     "test": "jest",
@@ -22,6 +23,7 @@
     "@types/jest": "^27.5.0",
     "@types/luxon": "^2.3.1",
     "babel-jest": "^28.1.0",
+    "googleapis": "^100.0.0",
     "jest": "^28.1.0",
     "luxon": "^2.3.2",
     "mongodb": "^4.6.0",
@@ -32,6 +34,6 @@
     "webpack-cli": "^4.9.2"
   },
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/"
   }
 }

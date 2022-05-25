@@ -1,15 +1,5 @@
 import { YKUProducts, YKUProductNames, YKUPrices, YKUPaymentInputFields, YKUReceipt, YKUDayReceipt } from "./types";
-import { Interval, DateTime } from 'luxon';
-
-export const YKU_initialProducts: YKUProducts = {
-	kayakPackage: 0,
-	paddleboardPackage: 0,
-	kidsKayaks: 0,
-	tenFootPaddleboards: 0,
-	eightFootKayaks: 0,
-	inflatablePaddleboards: 0,
-	trailer: 0
-};
+import { getArrayOfDates } from "../shared";
 
 export const YKU_getLegibleNames = (product: YKUPaymentInputFields) => {
 	switch (product) {
@@ -56,26 +46,15 @@ export const YKU_getPrices = (products: YKUProducts, isWeekend: boolean, prices:
 	return priceObject;
 };
 
-function* getDates(interval: Interval) {
-	let cursor = interval.start.startOf('day');
-	while(cursor <= interval.end) {
-		yield cursor;
-		cursor = cursor.plus({ days: 1 })
-	}
-}
-
-export const YKU_getDaysOfWeek = (products: YKUProducts, prices: YKUPrices, dates: [string, string]): YKUReceipt => {
+export const YKU_getPricesBasedOnDates = (products: YKUProducts, prices: YKUPrices, dates: [string, string]): YKUReceipt => {
 	const days: YKUDayReceipt[] = [];
 	// fr, sat, sun
 	const weekendDates = [5,6,7];
-	const start = DateTime.fromISO(dates[0]);
-	const end = DateTime.fromISO(dates[1]);
-	const interval = Interval.fromDateTimes(start, end);
 	let discount = 0;
 
-	if (dates[0] && dates[1] && interval) {
-		const dates = Array.from(getDates(interval));
-		const mappedDates = dates.map(date => {
+	if (dates[0] && dates[1]) {
+		const readableDates = getArrayOfDates(dates);
+		const mappedDates = readableDates.map(date => {
 			return {
 				isWeekend: weekendDates.includes(date.weekday),
 				date: date.toISODate()
