@@ -1,28 +1,37 @@
-import { DateTime, Interval } from "luxon";
+import dayjs, { Dayjs } from "dayjs";
 
-export const toShortDate = (date: Date) => {
-    return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+export const toShortDate = (date: Dayjs) => {
+    const isValid = date.get('month') && date.get('date') && date.get('year');
+    return isValid ? `${date.get('month') + 1}/${date.get('month')}/${date.get('year')}` : '';
 }
 /* 
  * Returns all days between a given time period.
  */
-export function* getDates(interval: Interval) {
-	let cursor = interval.start.startOf('day');
-	while(cursor <= interval.end) {
-		yield cursor;
-		cursor = cursor.plus({ days: 1 })
-	}
-}
-/* 
- * Returns days in a given time period, in a readable format.
- */
-export const getArrayOfDates = (dates: [string, string]) => {
-    if (dates[0] && dates[1]) {
-        const start = DateTime.fromISO(dates[0]);
-        const end = DateTime.fromISO(dates[1]);
-        const interval = Interval.fromDateTimes(start, end);
-        return Array.from(getDates(interval))
+export function getDatesBetweenTwoDates(dateRange: [string, string] | [Dayjs, Dayjs] | [] | null): Dayjs[] {
+    if (dateRange && dateRange.length) {
+        const dateArray = [];
+        let currentDate = dayjs(dateRange[0]);
+        const stopDate = dayjs(dateRange[1]);
+        while (currentDate <= stopDate) {
+            dateArray.push(currentDate);
+            currentDate = dayjs(currentDate).add(1, 'day');
+        }
+        return dateArray;
     } else {
         return [];
     }
 }
+
+export const doesDateRangeContainDateRange = (firstDateRange: Dayjs[], secondDateRange: Dayjs[]) => {
+    let couponOverlapsDates = false;
+    firstDateRange.forEach(firstDate => {
+        secondDateRange.forEach(secondDate => {
+            if (firstDate.startOf('day').valueOf() - secondDate.startOf('day').valueOf() === 0) {
+                couponOverlapsDates = true;
+            }
+        })
+    })
+
+    return couponOverlapsDates;
+}
+

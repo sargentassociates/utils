@@ -14,18 +14,16 @@
   },
   "author": "Jay Sargent",
   "license": "ISC",
-  "peerDependencies": {
-    "luxon": "^2.3.x"
-  },
   "devDependencies": {
     "@babel/core": "^7.17.10",
     "@babel/preset-env": "^7.17.10",
     "@types/jest": "^27.5.0",
     "@types/luxon": "^2.3.1",
+    "@types/react": "^18.0.9",
     "babel-jest": "^28.1.0",
     "googleapis": "^100.0.0",
     "jest": "^28.1.0",
-    "luxon": "^2.3.2",
+    "loader-utils": "^3.2.0",
     "mongodb": "^4.6.0",
     "ts-jest": "^28.0.1",
     "ts-loader": "^9.2.8",
@@ -35,5 +33,8 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.2"
   }
 }

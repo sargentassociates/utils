@@ -1,3 +1,5 @@
+import { CouponType } from "../shared";
+
 export type YKUProductNames =
 	| 'kayakPackage'
 	| 'paddleboardPackage'
@@ -46,9 +48,10 @@ export interface YKUDayReceipt {
 	products: YKUProduct[];
 }
 export interface YKUReceipt {
+	originalTotal: number;
 	total: number;
-	diff: number; 
 	days: YKUDayReceipt[];
 	discount: number;
+	discountType: CouponType;
 }
   

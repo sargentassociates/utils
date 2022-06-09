@@ -1,4 +1,4 @@
-import { DateTime } from "luxon";
+import { Dayjs } from "dayjs";
 
 export interface UPWCPrices {
     jetskiPackage: {
@@ -41,7 +41,7 @@ export interface UPWCProduct {
 export interface UPWCReceipt {
 	total: number;
 	diff: number; 
-	days: DateTime[];
+	days: Dayjs[];
 	discount: number;
 }
 export interface UPWCPricesContext {

@@ -1,4 +1,5 @@
-import { getArrayOfDates } from "../shared";
+import { Dayjs } from "dayjs";
+import { getDatesBetweenTwoDates } from "../shared";
 import { UPWCPrices, UPWCProductCount, UPWCProductNames, UPWCReceipt } from "./types"
 
 
@@ -14,7 +15,7 @@ export const UPWC_getJetskiPrice = (days: number, prices: UPWCPrices) => {
     }
 
 }
-export const UPWC_getPrices = (productCount: UPWCProductCount, prices: UPWCPrices, dates: [string, string]) => {
+export const UPWC_getPrices = (productCount: UPWCProductCount, prices: UPWCPrices, dates: [Dayjs, Dayjs]) => {
 	const priceObject: UPWCReceipt = {
         total: 0,
         diff: 0,
@@ -22,7 +23,7 @@ export const UPWC_getPrices = (productCount: UPWCProductCount, prices: UPWCPrice
         discount: 0
     };
 
-    const days = getArrayOfDates(dates);
+    const days = getDatesBetweenTwoDates(dates);
     const price = UPWC_getJetskiPrice(days.length, prices);
 
     if (dates[0] && dates[1]) {

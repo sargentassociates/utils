@@ -1,2 +1,2 @@
 export * from './forms/fns';
-export * from './list/types';
+export * from './types';
