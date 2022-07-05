@@ -50,7 +50,7 @@ export const YKU_calculateSingleDayPrice = (products: YKUProducts, isWeekend: bo
 export const YKU_calculateTotal = (products: YKUProducts, prices: YKUPrices, dates: [Dayjs, Dayjs], coupon: CouponWithTotal | null): YKUReceipt => {
 	const days: YKUDayReceipt[] = [];
 	// fr, sat, sun
-	const weekendDates = [5,6,7];
+	const weekendDates = [0,5,6];
 	let discount = 0;
 
 	if (dates?.length && dates[0] && dates[1]) {
