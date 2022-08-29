@@ -1,0 +1,106 @@
+@import './colors.scss';
+
+* {
+	font-family: 'IBM Plex Sans', sans-serif;
+}
+.huge,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 16px;
+}
+
+$base: 4px;
+
+@function fontSize($number) {
+	@return $base * $number;
+}
+
+.success {
+	color: #52c41a;
+}
+.error {
+	color: #ff4d4f;
+}
+.warning {
+	color: #faad14;
+}
+.strikethrough {
+	text-decoration: line-through;
+}
+// font-styles
+.italic {
+	font-style: italic;
+}
+.bold {
+	font-weight: 300;
+}
+.disabled {
+	color: $disabled;
+}
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+
+// font-sizes
+.huge {
+	font-size: fontSize(8);
+}
+h1 {
+	font-size: fontSize(7);
+}
+h2 {
+	font-size: fontSize(6);
+}
+h3 {
+	font-size: fontSize(5);
+	font-weight: 300;
+}
+h4 {
+	font-size: fontSize(4);
+}
+p {
+	font-size: fontSize(3.5);
+}
+.teenie {
+	font-size: fontSize(3);
+}
+.mini {
+	font-size: fontSize(2);
+}
+
+@media (min-width: 800px) {
+	.huge {
+		font-size: fontSize(9);
+	}
+	h1 {
+		font-size: fontSize(8);
+	}
+	h2 {
+		font-size: fontSize(7);
+	}
+	h3 {
+		font-size: fontSize(6);
+	}
+	h4 {
+		font-size: fontSize(5);
+	}
+	p {
+		font-size: fontSize(4.5);
+	}
+	.teenie {
+		font-size: fontSize(4);
+	}
+	.mini {
+		font-size: fontSize(3);
+	}
+}
