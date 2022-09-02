@@ -6,6 +6,9 @@ const getPlaceholder = (placeholder: string) => {
     return `input[placeholder="${placeholder}"]`
 };
 
+const getAriaLabel = (text: string) => {
+    return `[aria-label="${text}"]`;
+}
 const getId = (id: string) => `#${id}`;
 
 const getClass = (className: string) => `.${className}`;
@@ -18,12 +21,12 @@ export const ISPUtils: ISPs = {
     att: {
         link: 'https://www.att.com/buy/broadband/availability.html',
         selectors: {
-            street: getId('address1-desktop'),
+            street: getId('input-AddressEntry_ComboBox_streetAddr_fullAddress'),
             aptUnit: '',
-            zip: getPlaceholder('Zip Code'),
+            zip: '',
             state: '',
             city: '',
-            submit: '',
+            submit: getClass('btn-primary-2'),
         }
     },
     spectrum: {
