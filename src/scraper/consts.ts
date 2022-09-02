@@ -1,5 +1,5 @@
 import { ResponseUrls } from "..";
-import { ISPs } from "./isp-utils.types"
+import { ISPs, SupportedISPs } from "./types"
 
 const submitButton = 'button[type="submit"]';
 const getPlaceholder = (placeholder: string) => {
@@ -9,13 +9,16 @@ const getPlaceholder = (placeholder: string) => {
 const getId = (id: string) => `#${id}`;
 
 const getClass = (className: string) => `.${className}`;
+export const spectrum: SupportedISPs = 'spectrum';
+export const frontier: SupportedISPs = 'frontier';
+export const att: SupportedISPs = 'att';
 
 export const ISPUtils: ISPs = {
     userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4182.0 Safari/537.36',
     att: {
         link: 'https://www.att.com/buy/broadband/availability.html',
         selectors: {
-            address: getId('address1-desktop'),
+            street: getId('address1-desktop'),
             aptUnit: '',
             zip: getPlaceholder('Zip Code'),
             state: '',
@@ -26,7 +29,7 @@ export const ISPUtils: ISPs = {
     spectrum: {
         link: 'https://www.spectrum.com',
         selectors: {
-            address: getId('address1-desktop'),
+            street: getId('address1-desktop'),
             aptUnit: '',
             zip: getId('zip-desktop'),
             state: '',
@@ -37,7 +40,7 @@ export const ISPUtils: ISPs = {
     frontier: {
         link: 'https://frontier.com/buy',
         selectors: {
-            address: getId('street-address'),
+            street: getId('street-address'),
             aptUnit: '',
             zip: '',
             state: '',
@@ -52,7 +55,9 @@ export const responseURLs: ResponseUrls = {
     available: [
         'https://www.spectrum.com/buy/featured', 
         'https://www.spectrum.com/address/multiple-unit', 
-        'https://frontier.com/buy/plan-package/'
+        'https://frontier.com/buy/plan-package/',
+        'https://frontier.com/buy/existing-customer/',
+        'https://www.spectrum.com/address/existing-coverage'
     ],
     unavailable: [
         'https://www.spectrum.com/address/house-not-found', 

@@ -4,7 +4,7 @@ import { YesNoError } from "../shared";
 export type SupportedISPs = 'spectrum' | 'frontier' | 'att';
 
 export interface AddressKeys {
-    address: string;
+    street: string;
     aptUnit: string;
     city: string;
     state: string;
@@ -12,9 +12,9 @@ export interface AddressKeys {
 }
 export interface ScraperAddressFile extends AddressKeys {
     key: string;
-    att?: YesNoError | string;
-    spectrum?: YesNoError | string;
-    frontier?: YesNoError | string;
+    att?: string;
+    spectrum?: string;
+    frontier?: string;
 }
 
 export interface RawScraperAddressFile {
@@ -39,4 +39,34 @@ export interface ScraperFileDocument {
 export interface ResponseUrls {
     available: string[],
     unavailable: string[]
+}
+
+export interface ISPs {
+    userAgent: string;
+    att: ISPObject;
+    spectrum: ISPObject;
+    frontier: ISPObject;
+}
+
+export interface ISPSelectors extends AddressKeys {
+    submit: string;
+    suggestion?: string;
+}
+export interface ISPObject {
+    link: string;
+    selectors: ISPSelectors;
+}
+
+export interface ScraperClusterType {
+    isp: SupportedISPs;
+    address: ScraperAddressFile;
+    index: number;
+}
+
+export interface ScraperEnvVariables {
+    SERVER_PORT: string;
+    CONNECTION_STRING: string;
+    TESTING: string;
+    HEADLESS: string;
+    MAX_CONCURRENCY: string;
 }
