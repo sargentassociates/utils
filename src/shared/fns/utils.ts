@@ -1,9 +1,5 @@
 import { YesNoError } from "../types";
 
-export const capitalize = (input: string) => {
-    return input.length && input[0].toUpperCase() + input.substring(1)
-}
-
 export const noop = () => {};
 
 export const getPercentValue = (amount: number, percent: number) => {
