@@ -60,11 +60,13 @@ export const responseURLs: ResponseUrls = {
         'https://www.spectrum.com/address/multiple-unit', 
         'https://frontier.com/buy/plan-package/',
         'https://frontier.com/buy/existing-customer/',
-        'https://www.spectrum.com/address/existing-coverage'
+        'https://www.spectrum.com/address/existing-coverage',
+        'https://www.att.com/buy/broadband/offers.html'
     ],
     unavailable: [
         'https://www.spectrum.com/address/house-not-found', 
         'https://www.spectrum.com/address/out-of-footprint',
-        'https://frontier.com/buy/unserviceable-allconnect/'
+        'https://frontier.com/buy/unserviceable-allconnect/',
+        'https://www.att.com/buy/broadband/not-available.html'
     ]
 }
