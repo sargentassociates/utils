@@ -7,3 +7,22 @@ $disabled: lightgrey;
 $ant-border: #d9d9d9;
 $primary: #810c14;
 $ant-blue: #1890ff;
+
+.color-white {
+    color: white;
+}
+.color-black {
+    color: black;
+}
+
+.shadow {
+    box-shadow: $shadow;
+}
+
+.bottom-shadow {
+    box-shadow: $bottom-shadow;
+}
+
+.top-shadow {
+    box-shadow: $top-shadow;
+}

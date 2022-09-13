@@ -1,8 +1,5 @@
 @import './colors.scss';
 
-* {
-	font-family: 'IBM Plex Sans', sans-serif;
-}
 .huge,
 h1,
 h2,
@@ -17,6 +14,10 @@ $base: 4px;
 
 @function fontSize($number) {
 	@return $base * $number;
+}
+
+.black-text-shadow {
+	text-shadow: 0.03em 0.04em 0.4em #000000;
 }
 
 .success {
