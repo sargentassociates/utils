@@ -20,13 +20,14 @@
     "@types/jest": "^27.5.0",
     "@types/luxon": "^2.3.1",
     "@types/react": "^18.0.9",
+    "antd": "^4.22.4",
     "babel-jest": "^28.1.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "googleapis": "^100.0.0",
     "jest": "^28.1.0",
     "loader-utils": "^3.2.0",
-    "mongodb": "^4.6.0",
+    "mongodb": "^4.9.0",
     "sass": "^1.54.5",
     "sass-loader": "^13.0.2",
     "style-loader": "^3.3.1",
@@ -40,6 +41,11 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {
-    "dayjs": "^1.11.2"
+    "dayjs": "^1.11.2",
+    "pretty-bytes": "^6.0.0"
+  },
+  "peerDependencies": {
+    "antd": "^4.22.4",
+    "mongodb": "^4.9.0"
   }
 }
