@@ -33,7 +33,7 @@ export const ISPUtils: ISPs = {
         link: 'https://www.spectrum.com',
         selectors: {
             street: getId('address1-desktop'),
-            aptUnit: '',
+            aptUnit: getId('apt-desktop'),
             zip: getId('zip-desktop'),
             state: '',
             city: '',
