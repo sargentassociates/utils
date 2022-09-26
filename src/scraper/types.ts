@@ -34,6 +34,7 @@ export interface ScraperFileDocument {
     dateUploaded: string;
     fileAddressInfo: ScraperAddressFile[];
     processing: boolean;
+    error?: boolean;
 }
 
 export interface ResponseUrls {
