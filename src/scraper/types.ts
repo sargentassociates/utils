@@ -44,7 +44,7 @@ export interface ResponseUrls {
 
 export interface ISPs {
     userAgent: string;
-    att: ISPObject;
+    att?: ISPObject;
     spectrum: ISPObject;
     frontier: ISPObject;
 }

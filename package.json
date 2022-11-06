@@ -1,6 +1,6 @@
 {
   "name": "@sargentassociates/utils",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -23,7 +23,6 @@
     "@types/react": "^18.0.9",
     "antd": "^4.22.4",
     "babel-jest": "^28.1.0",
-    "googleapis": "^100.0.0",
     "jest": "^28.1.0",
     "loader-utils": "^3.2.0",
     "mongodb": "^4.9.0",
@@ -38,7 +37,7 @@
   },
   "dependencies": {
     "dayjs": "^1.11.2",
-    "pretty-bytes": "^6.0.0"
+    "googleapis": "^108.0.0"
   },
   "peerDependencies": {
     "antd": "^4.22.4",

@@ -1,4 +1,4 @@
-import { calendar_v3 } from 'googleapis';
+import type { calendar_v3 } from 'googleapis';
 
 export interface EventObject {
 	day: number;
