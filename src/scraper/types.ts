@@ -34,6 +34,7 @@ export interface ScraperFileDocument {
     dateUploaded: string;
     fileAddressInfo: ScraperAddressFile[];
     processing: boolean;
+    error?: boolean;
 }
 
 export interface ResponseUrls {
@@ -43,7 +44,7 @@ export interface ResponseUrls {
 
 export interface ISPs {
     userAgent: string;
-    att: ISPObject;
+    att?: ISPObject;
     spectrum: ISPObject;
     frontier: ISPObject;
 }

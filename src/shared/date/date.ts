@@ -7,3 +7,11 @@ export const getLocalDateAndTime = (ISOString?: string) => {
     
     return time && date ? `${time} ${date}` : 'Invalid Date';
 };
+
+export const getLocalDate = (ISOString?: string) => {
+    if (!ISOString) {
+        ISOString = new Date().toLocaleDateString().replace(/\//g, '-');
+    }
+
+    return new Date(ISOString).toLocaleDateString().replace(/\//g, '-');
+}
