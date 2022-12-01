@@ -1,4 +1,6 @@
 const path = require('path');
+const sass = require('sass');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/index.ts',
@@ -9,7 +11,7 @@ module.exports = {
         test: /\.ts?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
-      },
+      }
     ],
   },
   resolve: {
@@ -21,4 +23,14 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     globalObject: 'this',
   },
+  plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'src/shared/css/*.scss',
+          to: "[name][ext]"
+        }
+      ],
+    }),
+  ]
 };

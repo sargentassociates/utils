@@ -1,0 +1,28 @@
+$shadow: 0 7px 29px -2px rgba(100, 100, 111, 0.2);
+$bottom-shadow: 0 5px 17px -1px rgba(100, 100, 111, 0.2);
+$top-shadow: 0 5px 17px 6px rgb(100 100 111 / 20%);
+
+$overlay: rgba(0, 0, 0, 0.7);
+$disabled: lightgrey;
+$ant-border: #d9d9d9;
+$primary: #810c14;
+$ant-blue: #1890ff;
+
+.color-white {
+    color: white;
+}
+.color-black {
+    color: black;
+}
+
+.shadow {
+    box-shadow: $shadow;
+}
+
+.bottom-shadow {
+    box-shadow: $bottom-shadow;
+}
+
+.top-shadow {
+    box-shadow: $top-shadow;
+}

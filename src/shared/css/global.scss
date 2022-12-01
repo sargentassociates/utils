@@ -1,0 +1,28 @@
+@import './flex.scss';
+@import './text.scss';
+@import './colors.scss';
+
+html,
+body,
+#root {
+	@extend .full-height;
+}
+
+.space-top {
+	margin-top: 12px;
+}
+.space-bottom {
+	margin-bottom: 12px;
+}
+.full-height {
+	height: 100%;
+}
+.full-width {
+	width: 100%;
+}
+.relative {
+	position: relative;
+}
+.absolute {
+	position: absolute;
+}
