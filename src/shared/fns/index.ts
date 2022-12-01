@@ -3,3 +3,4 @@ export * from './date-utils';
 export * from './coupons';
 export * from './async';
 export * from './strings';
+export * from './validate-email';

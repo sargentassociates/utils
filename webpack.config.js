@@ -27,11 +27,8 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: 'src/shared/css/global.scss',
-          to: 'style.css',
-          transform: (content, path) => {
-            return sass.compile(path).css
-          },
+          from: 'src/shared/css/*.scss',
+          to: "[name][ext]"
         }
       ],
     }),
