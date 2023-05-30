@@ -31,4 +31,5 @@ export const prices: YKUPrices = {
 		weekend: 30,
 		max: 6,
 	},
+	processingFee: 5
 };

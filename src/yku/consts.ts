@@ -6,8 +6,7 @@ export const YKU_initialProducts: YKUProducts = {
 	kidsKayaks: 0,
 	tenFootPaddleboards: 0,
 	eightFootKayaks: 0,
-	inflatablePaddleboards: 0,
-	trailer: 0
+	inflatablePaddleboards: 0
 };
 
 export const YKU_individualRates: YKUProductNames[] = [

@@ -7,7 +7,6 @@ export type YKUProductNames =
 	| 'tenFootPaddleboards'
 	| 'eightFootKayaks'
 	| 'inflatablePaddleboards'
-	| 'trailer';
 
 export interface YKUProducts {
 	kayakPackage: number;
@@ -31,7 +30,8 @@ export interface YKUPrices {
 	kidsKayaks: YKUPriceTypes;
 	tenFootPaddleboards: YKUPriceTypes;
 	inflatablePaddleboards: YKUPriceTypes;
-	[key: string]: YKUPriceTypes;
+	processingFee: number;
+	[key: string]: YKUPriceTypes | number;
 }
 
 export type YKUPaymentInputFields = YKUProductNames | 'days';

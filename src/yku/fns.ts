@@ -17,9 +17,8 @@ export const YKU_getLegibleNames = (product: YKUPaymentInputFields) => {
 		case 'tenFootPaddleboards':
 			return "10' Paddleboards";
 		case 'days':
-			return "Number of Days";
 		default:
-			return 'Trailer'
+			return "Number of Days";
 	}
 };
 
@@ -32,6 +31,7 @@ export const YKU_calculateSingleDayPrice = (products: YKUProducts, isWeekend: bo
 		if (key) {
 			name = key;
 		}
+
 		const price = isWeekend
 			? prices[key as YKUProductNames].weekend
 			: prices[key as YKUProductNames].weekday;
