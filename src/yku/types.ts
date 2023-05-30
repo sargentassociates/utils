@@ -16,7 +16,6 @@ export interface YKUProducts {
 	tenFootPaddleboards: number;
 	eightFootKayaks: number;
 	inflatablePaddleboards: number;
-	trailer: number;
 	[key: string]: number;
 }
 export interface YKUPriceTypes {
@@ -32,7 +31,6 @@ export interface YKUPrices {
 	kidsKayaks: YKUPriceTypes;
 	tenFootPaddleboards: YKUPriceTypes;
 	inflatablePaddleboards: YKUPriceTypes;
-	trailer: YKUPriceTypes;
 	[key: string]: YKUPriceTypes;
 }
 

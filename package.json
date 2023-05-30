@@ -1,16 +1,17 @@
 {
   "name": "@sargentassociates/utils",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "https://github.com/sargentassociates/utils.git",
   "scripts": {
-    "deploy": "npm run build && np",
+    "deploy": "npm run test && npm run types && npm run build && npm publish",
     "build": "webpack",
     "start": "webpack --mode=development --watch",
     "test": "jest",
-    "test:w": "jest --watch"
+    "test:w": "jest --watch",
+    "types": "tsc --noEmit"
   },
   "author": "Jay Sargent",
   "license": "ISC",

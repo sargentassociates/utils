@@ -6,8 +6,7 @@ const zeros: YKUProducts = {
     tenFootPaddleboards: 0,
     eightFootKayaks: 0,
     kidsKayaks: 0,
-    inflatablePaddleboards: 0,
-    trailer: 0
+    inflatablePaddleboards: 0
 }
 export const kayakPackage: YKUProducts = {
     ...zeros,
